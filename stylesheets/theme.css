@@ -1,0 +1,27 @@
+
+@import url("variables.css");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
+
+.btn-primary {
+    color: white;
+    background-color: var(--primary) !important;
+    border-color: var(--primary);
+}
+
+.btn-secondary {
+    color: white;
+    background-color: var(--gray) !important;
+    border-color: var(--gray);
+}
+
+.btn-success {
+    color: white;
+    background-color: var(--success) !important;
+    border-color: var(--success);
+}
+
+.bg-primary { background-color: var(--primary) !important; }
+
+.bg-secondary { background-color: var(--gray) !important; }
+
+.bg-success { background-color: var(--success) !important; }
