@@ -2,6 +2,10 @@
 @import url("variables.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700,400italic");
 
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
 .btn-primary {
     color: white;
     background-color: var(--primary) !important;

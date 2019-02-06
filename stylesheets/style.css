@@ -8,4 +8,21 @@ body {
     y que no se puede escalar a menos que eso */
 }
 
-#login-page header, footer { color: var(--secondary); }
+#login-page header, footer, 
+#signup-page header, footer { color: var(--secondary); }
+
+footer {
+    position: fixed;
+    left: 0%; 
+    bottom: 0%;
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+    
+}
+
+@media (min-width: 992px) {
+
+    
+}
