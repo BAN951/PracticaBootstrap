@@ -6,72 +6,188 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Main page</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="../stylesheets/theme.css">
     <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
-    <div id="main-page">
+    <div id="main-page" class="container-fluid">
         <header>
-            <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                    </ul>
-                </div>
+            <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link"><i class="large material-icons">menu</i></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
-                    <li  class="nav-item">
+                    <li class="nav-item menu_item">
                         <a class="nav-link"><i class="large material-icons">date_range</i></a>
                     </li>
-                    <li  class="nav-item">
+                    <li class="nav-item menu_item">
                         <a class="nav-link"><i class="large material-icons">mail</i></a>
                     </li>
-                    <li  class="nav-item">
+                    <li class="nav-item menu_item">
                         <a class="nav-link"><i class="large material-icons">notifications</i></a>
                     </li>
-                    <li class="nav-item pt-3">
+                    <li class="nav-item menu_item pt-3">
                         <span class="badge badge-warning">Notificaciones</span>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
+                <ul class="navbar-nav ml-auto user_section">
+                    <li class="nav-item dropdown float-left mr-4">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             Benjamin Adam Nagy
                         </a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Link 1</a>
-                            <a class="dropdown-item" href="#">Link 2</a>
-                            <a class="dropdown-item" href="#">Link 3</a>
+                            <a class="dropdown-item" href="#">Settings</a>
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="#">Notifications<span
+                                    class="badge badge-danger ml-2">3</span></a>
+                            <a class="dropdown-item" href="#">Help</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Logout</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <img src="default.png">
+                    <li class="nav-item float-lg-right mt-2 mr-4">
+                        <img src="default.png" id="user_img">
                     </li>
                 </ul>
             </nav>
         </header>
-        <main class="container">
-            
+        <main>
+            <div class="row mb-3" id="botones_entrada_salida">
+                <div class="col-md-6 mw-100">
+                    <button class="btn btn-success w-100 pt-3 m-1 float-lg-right
+                                  entrada">
+                        <h5><b>Entrada</b></h5>
+                    </button>
+                </div>
+                <div class="col-md-6 mw-100">
+                    <button class="btn btn-success w-100 pt-3 m-1 float-lg-left
+                                  salida">
+                        <h5><b>Salida</b></h5>
+                    </button>
+                </div>
+            </div>
+            <div class="row bg-light">
+                <div class="col bg-light">
+                    <h4 class="float-left pl-3 w-100 bg-light p-2 text-dark"><b>Tareas</b></h4>
+                </div>
+            </div>
+            <div class="row bg-light pb-3 mb-2" id="cartas">
+                <div class="col-md p2">
+                    <div class="card ml-2 mr-2 mb-1 card3 bg-info">
+                        <div class="card-header text-white"><b>Tarea 1</b></div>
+                        <div class="card-body bg-white">
+                            <p>Descripción breve de la tarea.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md p2 mw-100">
+                    <div class="card ml-2 mr-2 mb-1 card3 bg-info">
+                        <div class="card-header text-white"><b>Tarea 2</b></div>
+                        <div class="card-body bg-white">
+                            <p>Descripción breve de la tarea.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md p2 mw-100">
+                    <div class="card ml-2 mr-2 mb-1 card3 bg-info">
+                        <div class="card-header text-white"><b>Tarea 3</b></div>
+                        <div class="card-body bg-white">
+                            <p>Descripción breve de la tarea.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5" id="registros">
+                <div class="col-md ml-4 mr-4">
+                    <table class="table table-hover">
+                        <h4 class="bg-primary p-3 text-white">Historial de registros</h4>
+                        <thead>
+                            <tr>
+                                <th>Fecha</th>
+                                <th>Hora</th>
+                                <th>Tipo de operación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2019-02-03</td>
+                                <td>10:59</td>
+                                <td>ENTRADA</td>
+                            </tr>
+                            <tr class="bg-light">
+                                <td>2019-02-03</td>
+                                <td>17:13</td>
+                                <td>SALIDA</td>
+                            </tr>
+                            <tr>
+                                <td>2019-02-06</td>
+                                <td>08:30</td>
+                                <td>ENTRADA</td>
+                            </tr>
+                            <tr class="bg-light">
+                                <td>2019-02-06</td>
+                                <td>17:30</td>
+                                <td>SALIDA</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
         </main>
+
+            <!-- <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6">
+                        <button class="btn btn-light btn-outline-dark w-100 pt-3">Entrada</button>
+                    </div>
+                    <div class="col-md-6">
+                        <button class="btn btn-light btn-outline-dark w-100 pt-3">Salida</button>
+                    </div>
+        
+                    <!-- <div class="clearfix">
+                            <button class="btn btn-light btn-outline-dark float-left w-50 pt-3">
+                                <h5><b>Entrada</b></h5>
+                            </button>
+                            <button class="btn btn-light btn-outline-dark float-right w-50 pt-3">
+                                <h5><b>Salida</b></h5>
+                            </button>
+                        </div> -->
+                <!-- </div>
+                <div id="cartas_info">
+                    <div class="row mt-5">
+                        <div class="col-md text-center">
+                            <div class="card m5 border card3">
+                                <div class="card-body">
+        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md text-center">
+                            <div class="card m5 border card3">
+                                <div class="card-body">
+        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md text-center">
+                            <div class="card m5 border card3">
+                                <div class="card-body">
+        
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+            <!-- warning alert según una acción  -->
+            <!-- 3 cartas -->
+        
         <footer class="p-3 bg-primary">
             <div class="d-flex justify-content-center">
                 <p>Copyright&copy;  <b>| Benjamin Adam Nagy |</b></p> 
