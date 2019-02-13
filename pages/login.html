@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Log In</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../stylesheets/theme.css">
     <link rel="stylesheet" href="../stylesheets/style.css">
@@ -37,12 +38,12 @@
                                 <legend class="mb-3"><b>Log in</b></legend>
                                 <div class="form-group">
                                     <label for="username">Nombre de usuario:</label>
-                                    <input type="text" name="username" class="form-control" autofocus autocomplete="on" required>
+                                    <input type="text" name="username" class="form-control" autofocus autocomplete="on">
                                     <small class="form-text text-muted">Escribe tu nombre de usuario..</small>
                                 </div>
                                 <div class="form-group">
                                     <label for="passwd">Contraseña:</label>
-                                    <input type="password" name="passwd" class="form-control" required>
+                                    <input type="password" name="passwd" class="form-control">
                                     <small class="form-text text-muted">Escribe tu contraseña..</small>
                                 </div>
                                 <div class="d-flex justify-content-center mb-5">
@@ -57,8 +58,19 @@
                     </div>
                 </div>
             </div>
+
+            <!--Alert-->
+            <div class="row" id="alert_notif">
+                <div class="col">
+                    <div class="alert alert-warning ml-5 mr-5">
+                        <span><strong>Alerta!</strong>
+                            Tienes que rellenar todos los campos del formulario.</span>
+                    </div>
+                </div>
+            </div>
+
         </main>
-        <footer class="p-3 bg-primary">
+        <footer class="p-3 bg-primary" id="footer_nomain">
             <div class="d-flex justify-content-center">
                 <p>Copyright&copy;  <b>| Benjamin Adam Nagy |</b></p> 
                 <p>2ºDAW - Web Desing Interfaces</p>
@@ -68,11 +80,30 @@
     </div>
 
     <script>
-        window.onload = function() {
+        $(document).ready(function() {
             window.onresize = function() {
                 document.getElementById('w').innerText = window.innerWidth + " px";
             }
-        }
+
+            $('#alert_notif').css('display', 'none');
+
+            $('form').on('submit', function(e) {
+                
+                e.preventDefault();
+
+                if($('input[name="username"]').val() == '' 
+                        || $('input[name="passwd"]').val() == '') {
+
+                    $('#alert_notif').css('display', 'block');
+                    return false;        
+                }
+                else {
+                    window.location.href="main.html";
+                }
+                
+            });
+            
+        });
     </script>
 
 </body>

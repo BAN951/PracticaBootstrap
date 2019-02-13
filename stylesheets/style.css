@@ -14,6 +14,7 @@ body {
 .wrapper {
     display: flex;
     width: 100vw;
+    height: 100vh;
     align-items: stretch;
     flex-direction: row;
 }
@@ -32,26 +33,41 @@ body {
     border-radius: 1em; 
 }
 
-/**/
-.input-logo {
-    display: flex; 
-    
-}
 
 .material-icons { font-size: 2em; }
 .material-icons:hover { 
     color: white; 
 }
 
+#footer_nomain {
+    position: fixed; 
+    left: 0; 
+    bottom: 0; 
+    width: 100vw; 
+}
+
 footer {
     position: flex;
-    left: 0%;
-    bottom: 0%;
-    width: 100%;
 }
 
 #user_img {
     width: 50px;
+}
+
+.alert {
+    border: 2px dotted orange;
+    border-radius: 1em;
+}
+
+@media (min-width: 768px) {
+    .card {
+        border-radius: 1em;
+    }
+    .card-body {
+        border-bottom-left-radius: 1em;
+        border-bottom-right-radius: 1em;
+    }
+
 }
 
 @media (max-width: 768px) {
@@ -75,9 +91,5 @@ footer {
 
     #user_img, .menu_item {
         display: none;
-    }
-
-    footer {
-        height: 5vh;
     }
 }

@@ -22,46 +22,26 @@
                 <h3 class="text-center mt-3">User panel</h3>
             </div>
             <form>
-            <div class="form-group has-feedback">
-                <input type="text" class="form-control w-50" placeholder="Username" />
-                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+            <div id="sidebar_input">
+                <input type="text" class="input_rounded border mt-3 mb-3 ml-2 mr-2"
+                    placeholder="Search"/>
             </div>
             </form>
-            <ul class="list-unstyled components">
-                <p>Heading</p>
-                <li class="active">
-                    <a href="#home_submenu" 
-                       data-toggle="collapse" 
-                       aria-expanded="false"
-                       class="dropdown-toggle">Home</a>
-                       <ul class="collapse list-unstyled"
-                           id="home_submenu">
-                            <li><a href="#">home 1</a></li>
-                            <li><a href="#">home 2</a></li>
-                            <li><a href="#">home 3</a></li>
-                       </ul>
+            <ul class="list-group mt-4 ml-3 mr-3">
+                <li class="list-group-item bg-primary">
+                    <a href="#" class="text-white">Item 1</a>
                 </li>
-                <li><a href="#">About</a></li>
-                <li>
-                    <a href="#page_submenu"
-                       data-toggle="collapse"
-                       aria-expanded="false"
-                       class="dropdown-toggle">Pages</a>
-                    <ul class="collapse list-unstyled"
-                        id="page_submenu">
-                            <li><a href="#">page 1</a></li>
-                            <li><a href="#">page 2</a></li>
-                            <li><a href="#">page 3</a></li>
-                    </ul>
+                <li class="list-group-item bg-primary">
+                    <a href="#" class="text-white">Item 2</a>
                 </li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li class="list-group-item bg-primary">
+                    <a href="#" class="text-white">Item 3</a>
+                </li>
             </ul>
-
         </nav>
 
         <!-- Contenido de la página -->
-        <div id="main-page" class="container-fluid content">
+        <div id="main-page" class="container-fluid content pb-5 mb-5">
         <header>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <ul class="navbar-nav">
@@ -79,7 +59,7 @@
                     <li class="nav-item menu_item">
                         <a class="nav-link"><i class="large material-icons">notifications</i></a>
                     </li>
-                    <li class="nav-item menu_item pt-3">
+                    <li class="nav-item menu_item pt-3" id="nav_badge">
                         <span class="badge badge-warning">Notificaciones</span>
                     </li>
                 </ul>
@@ -119,6 +99,17 @@
                     </button>
                 </div>
             </div>
+
+            <!--Alert-->
+            <div class="row" id="alert_notif">
+                <div class="col">
+                    <div class="alert alert-warning ml-5 mr-5">
+                        <span><strong>Alert!</strong>
+                            Tienes notificaciones y eventos en tu lista que necesitan tu atención.</span>
+                    </div>
+                </div>
+            </div>
+
             <div class="row bg-light">
                 <div class="col bg-light">
                     <h4 class="float-left pl-3 w-100 bg-light p-2 text-dark"><b>Tareas</b></h4>
@@ -130,6 +121,7 @@
                         <div class="card-header text-white"><b>Tarea 1</b></div>
                         <div class="card-body bg-white">
                             <p>Descripción breve de la tarea.</p>
+                            <span><i class="material-icons">star</i></span>
                         </div>
                     </div>
                 </div>
@@ -138,6 +130,7 @@
                         <div class="card-header text-white"><b>Tarea 2</b></div>
                         <div class="card-body bg-white">
                             <p>Descripción breve de la tarea.</p>
+                            <span><i class="material-icons">star</i></span>
                         </div>
                     </div>
                 </div>
@@ -146,6 +139,7 @@
                         <div class="card-header text-white"><b>Tarea 3</b></div>
                         <div class="card-body bg-white">
                             <p>Descripción breve de la tarea.</p>
+                            <span><i class="material-icons">star</i></span>
                         </div>
                     </div>
                 </div>
@@ -188,7 +182,7 @@
             </div>
         </main>
 
-        <footer class="p-3 bg-primary">
+        <footer class="p-3 bg-primary mt-5 pt-5">
             <div class="d-flex justify-content-center">
                 <p>Copyright&copy; <b>| Benjamin Adam Nagy |</b></p>
                 <p>2ºDAW - Web Desing Interfaces</p>
@@ -203,14 +197,29 @@
     <script>
         $(document).ready(function() {
             
+            $('#alert_notif').css('display', 'none');
+
+            $('#nav_badge').on('click', function() {
+                $('#alert_notif').css('display', 'block');
+                setTimeout(function() {
+                    $('#alert_notif').css('display', 'none');
+                }, 3000);
+            });
+
             window.onresize = function() {
                 document.getElementById('w').innerText = window.innerWidth + " px";
+
+                if ($(window).width() < 1000) {
+                    $('#sidebar').hasClass('active', function () {
+                        $('#sidebar').removeClass('active');
+                    });
+                }
             }
 
             $('#sidebar_collapse').on('click', function() {
                 $('#sidebar').toggleClass('active');
             });
-        })
+        });
         
     </script>
 
