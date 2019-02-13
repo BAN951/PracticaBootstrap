@@ -14,12 +14,59 @@
     <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
-    <div id="main-page" class="container-fluid">
+    <div class="wrapper">
+
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3 class="text-center mt-3">User panel</h3>
+            </div>
+            <form>
+            <div class="form-group has-feedback">
+                <input type="text" class="form-control w-50" placeholder="Username" />
+                <i class="glyphicon glyphicon-search form-control-feedback"></i>
+            </div>
+            </form>
+            <ul class="list-unstyled components">
+                <p>Heading</p>
+                <li class="active">
+                    <a href="#home_submenu" 
+                       data-toggle="collapse" 
+                       aria-expanded="false"
+                       class="dropdown-toggle">Home</a>
+                       <ul class="collapse list-unstyled"
+                           id="home_submenu">
+                            <li><a href="#">home 1</a></li>
+                            <li><a href="#">home 2</a></li>
+                            <li><a href="#">home 3</a></li>
+                       </ul>
+                </li>
+                <li><a href="#">About</a></li>
+                <li>
+                    <a href="#page_submenu"
+                       data-toggle="collapse"
+                       aria-expanded="false"
+                       class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled"
+                        id="page_submenu">
+                            <li><a href="#">page 1</a></li>
+                            <li><a href="#">page 2</a></li>
+                            <li><a href="#">page 3</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+        </nav>
+
+        <!-- Contenido de la página -->
+        <div id="main-page" class="container-fluid content">
         <header>
             <nav class="navbar navbar-expand-md bg-primary navbar-dark">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link"><i class="large material-icons">menu</i></a>
+                        <a class="nav-link" id="sidebar_collapse"><i class="large material-icons">menu</i></a>
                     </li>
                 </ul>
                 <ul class="navbar-nav">
@@ -37,7 +84,7 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto user_section">
-                    <li class="nav-item dropdown float-left mr-4">
+                    <li class="nav-item dropdown float-left mr-4 mt-2">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
                             Benjamin Adam Nagy
                         </a>
@@ -52,7 +99,7 @@
                         </div>
                     </li>
                     <li class="nav-item float-lg-right mt-2 mr-4">
-                        <img src="default.png" id="user_img">
+                        <img src="../imgs/profileimg.png" class="rounded-circle" id="user_img">
                     </li>
                 </ul>
             </nav>
@@ -61,13 +108,13 @@
             <div class="row mb-3" id="botones_entrada_salida">
                 <div class="col-md-6 mw-100">
                     <button class="btn btn-success w-100 pt-3 m-1 float-lg-right
-                                  entrada">
+                                                entrada">
                         <h5><b>Entrada</b></h5>
                     </button>
                 </div>
                 <div class="col-md-6 mw-100">
                     <button class="btn btn-success w-100 pt-3 m-1 float-lg-left
-                                  salida">
+                                                salida">
                         <h5><b>Salida</b></h5>
                     </button>
                 </div>
@@ -135,74 +182,36 @@
                                 <td>17:30</td>
                                 <td>SALIDA</td>
                             </tr>
-                            </tbody>
-                        </table>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </main>
 
-            <!-- <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-6">
-                        <button class="btn btn-light btn-outline-dark w-100 pt-3">Entrada</button>
-                    </div>
-                    <div class="col-md-6">
-                        <button class="btn btn-light btn-outline-dark w-100 pt-3">Salida</button>
-                    </div>
-        
-                    <!-- <div class="clearfix">
-                            <button class="btn btn-light btn-outline-dark float-left w-50 pt-3">
-                                <h5><b>Entrada</b></h5>
-                            </button>
-                            <button class="btn btn-light btn-outline-dark float-right w-50 pt-3">
-                                <h5><b>Salida</b></h5>
-                            </button>
-                        </div> -->
-                <!-- </div>
-                <div id="cartas_info">
-                    <div class="row mt-5">
-                        <div class="col-md text-center">
-                            <div class="card m5 border card3">
-                                <div class="card-body">
-        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md text-center">
-                            <div class="card m5 border card3">
-                                <div class="card-body">
-        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md text-center">
-                            <div class="card m5 border card3">
-                                <div class="card-body">
-        
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- warning alert según una acción  -->
-            <!-- 3 cartas -->
-        
         <footer class="p-3 bg-primary">
             <div class="d-flex justify-content-center">
-                <p>Copyright&copy;  <b>| Benjamin Adam Nagy |</b></p> 
+                <p>Copyright&copy; <b>| Benjamin Adam Nagy |</b></p>
                 <p>2ºDAW - Web Desing Interfaces</p>
             </div>
-            <b><p id="w" style="color: rgb(255, 238, 238)"></p></b>
+            <b>
+                <p id="w" style="color: rgb(255, 238, 238)"></p>
+            </b>
         </footer>
     </div>
 
+</div>
     <script>
-        window.onload = function() {
+        $(document).ready(function() {
+            
             window.onresize = function() {
                 document.getElementById('w').innerText = window.innerWidth + " px";
             }
-        }
+
+            $('#sidebar_collapse').on('click', function() {
+                $('#sidebar').toggleClass('active');
+            });
+        })
+        
     </script>
 
 </body>

@@ -2,13 +2,8 @@
 
 * { margin: 0; padding: 0;}
 
-
 body {
     background-color: white;
-    display: flex;
-    min-width: 100vh;
-    width: auto !important;
-    flex-direction: column;
 }
 
 #login-page header, footer, 
@@ -16,24 +11,58 @@ body {
 
 .navbar { margin: 0px !important; }
 
+.wrapper {
+    display: flex;
+    width: 100vw;
+    align-items: stretch;
+    flex-direction: row;
+}
+
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+}
+
+#sidebar.active {
+    margin-left: -250px;
+}
+
+.input_rounded {
+    border-radius: 1em; 
+}
+
+/**/
+.input-logo {
+    display: flex; 
+    
+}
+
 .material-icons { font-size: 2em; }
 .material-icons:hover { 
     color: white; 
 }
 
 footer {
-    position: fixed;
+    position: flex;
     left: 0%;
     bottom: 0%;
     width: 100%;
 }
 
-#main-page > header nav {
-    width: 100vw !important;
+#user_img {
+    width: 50px;
 }
 
-
 @media (max-width: 768px) {
+
+    #sidebar {
+        margin-left: -250px;
+    }
+
+    #sidebar.active {
+        margin-left: 0;
+    }
 
     .entrada, .salida, .card, .table {
         width: 100vw !important;
